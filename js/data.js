@@ -114,38 +114,41 @@ const icons = [
 ];
 
 const container = document.querySelector(".container");
-const cardIcon = document.createElement ("div");
+
+const selezione = document.getElementById ("selezione-icone");
 // creo un ciclo per stampare le icone
 icons.forEach((myicone)=> {
 	
-		let classePiuicons =  myicone.prefix + myicone.name ;
+	let classePiuicons =  myicone.prefix + myicone.name ;
 	let classePiuFam =  myicone.family ;
-	let iconaNomeText = myicone.name;
-
+	
 	console.log(classePiuicons);
 	console.log(classePiuFam);
 	
-	
+	const cardIcon = document.createElement ("div");
+	cardIcon.classList.add ( "card-icona" );
+
 	let iconaStamp = document.createElement ("i");
-	let iconaNome = document.createElement ("h3");
+	let iconaNome = document.createElement ("h4");
+	iconaNome.append (myicone.name);
 	
-	cardIcon.append(iconaNome);
 	iconaStamp.classList.add ( classePiuFam );
 	iconaStamp.classList.add ( classePiuicons );
 	container.append(cardIcon);
 	cardIcon.append(iconaStamp);
+	cardIcon.append(iconaNome);
 	
 	
-	
+	// aggiungere il colore alle icone 
 	if (myicone.color === `blue`){
 		 iconaStamp.classList.add ("blu");
 		return true;
 	} 
-if (myicone.color === `orange`){
+		if (myicone.color === `orange`){
 			 iconaStamp.classList.add ( "arancio" );
 			return true;
 		} 
-if (myicone.color === `green`){
+	if (myicone.color === `green`){
 				 iconaStamp.classList.add ( "verde" );
 				return true;
 			} 
@@ -158,26 +161,80 @@ if (myicone.color === `green`){
 console.log(icons);
 
 
-// aggiungere il colore alle icone 
-const coloreblu = icons.filter((mycolori) => {
+
+// selezione.addEventListener ("change",
+// function( ) {
+// 	container.innerHTML = " ";
+// 	const sceltaCat = selezione.value;
+// 	console.log(sceltaCat);
+	
+// 	switch (sceltaCat) {
+// 		case 0:
+// 			default:
+			
+// 	break;
+	
+// 	case 1 :
+//
+
+// 
+	
+// });	
+// 	}
+
+// }
+// );
+
+// filtrare per colore
+
+// const coloreblu = icons.filter((mycolori) => {
 	
 	
-});
-	console.log("colore blu", coloreblu);
+// });
+// 	console.log("colore blu", coloreblu);
 	
 		
-	const colorearancio = icons.filter((mycolori) => {
+// 	const colorearancio = icons.filter((mycolori) => {
 	
 		
-	});
-		console.log("colore arancio", colorearancio);
+// 	});
+// 		console.log("colore arancio", colorearancio);
 		
-		const coloreverde = icons.filter((mycolori) => {
+// 		const coloreverde = icons.filter((mycolori) => {
 	
 			
-		});
-			console.log("colore verde", coloreverde);
+// 		});
+		
+// 		console.log("colore verde", coloreverde);
  
+	 	// filtrare per categoria	
+const animali = icons.filter((myanimal) => {
+			if (myanimal.type === 'animal'){
+				
+			   return true;
+		   };
+		});
+		console.log(animali);
+
+const vegetali = icons.filter((myveg) =>{
+	if (myveg.type == 'vegetable' ){
+		return true;
+	}
+});
+console.log(vegetali);
+
+const user = icons.filter((myuser) =>{
+	if (myuser.type == 'user' ){
+		return true;
+	}
+});
+console.log(vegetali);
+	
+
+
+
+	
+
 
 			
 

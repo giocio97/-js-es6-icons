@@ -1,3 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: #2ab1dd;
+    padding: 8px;
+}
+
+.filtro{
+    text-align: center;
+    background-color: #2ab1dd;
+    color: white;
+    padding: 10px;
+    
+}
+
+.container{
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+   
+    gap: 20px;
+    width:100%;
+    height: 100vh;
+    
+}
+.card-icona{
+    width: calc(100% / 5);
+    background-color: white;
+    
+    height: 6vw;
+    filter: drop-shadow(1px 1px 1px grey);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.card-icona > i {
+    font-size: 2vw;
+}
+
+.card-icona > h4{
+    font-size: 1vw;
+    padding: 10px;
+  }
+
+
 .arancio{
     color: orange;
 }
