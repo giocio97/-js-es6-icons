@@ -127,8 +127,8 @@ icons.forEach((myicone)=> {
 	
 	const cardIcon = document.createElement ("div");
 	let iconaStamp = document.createElement ("i");
-	iconaStamp.classList.add (".classePiuFam");
-	iconaStamp.classList.add (" .classePiuicons ");
+	iconaStamp.classList.add ( classePiuFam );
+	iconaStamp.classList.add ( classePiuicons );
 	container.append(cardIcon);
 	cardIcon.append(iconaStamp);
 
