@@ -118,13 +118,17 @@ const container = document.querySelector(".container");
 
 
 // creo un ciclo per stampare le icone
-icons.forEach((myElement, indice)=> {
+icons.map((myicone)=> {
 	const cardIcon = document.createElement ("div");
 	let iconaStamp = document.createElement ("i");
 	iconaStamp.classList.add (icons.family, (icons.prefix + icons.name));
-	iconaStamp.append(cardIcon);
+	container.append(cardIcon);
+	cardIcon.append(iconaStamp);
 
+
+	
 });
+console.log(icons);
 
 
 
