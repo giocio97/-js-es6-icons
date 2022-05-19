@@ -120,12 +120,15 @@ const container = document.querySelector(".container");
 
 // creo un ciclo per stampare le icone
 icons.forEach((myicone)=> {
-	
-	let classePiu = icons.family + " ", icons.prefix + icons.name;
+	let classePiuicons =  myicone.prefix + myicone.name ;
+	let classePiuFam =  myicone.family ; 
+	console.log(classePiuicons);
+	console.log(classePiuFam);
 	
 	const cardIcon = document.createElement ("div");
 	let iconaStamp = document.createElement ("i");
-	iconaStamp.classList.add (classePiu);
+	iconaStamp.classList.add (".classePiuFam");
+	iconaStamp.classList.add (" .classePiuicons ");
 	container.append(cardIcon);
 	cardIcon.append(iconaStamp);
 
