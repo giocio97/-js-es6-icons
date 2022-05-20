@@ -116,120 +116,123 @@ const icons = [
 const container = document.querySelector(".container");
 
 const selezione = document.getElementById ("selezione-icone");
-// creo un ciclo per stampare le icone
-icons.forEach((myicone)=> {
-	
-	let classePiuicons =  myicone.prefix + myicone.name ;
-	let classePiuFam =  myicone.family ;
-	
-	console.log(classePiuicons);
-	console.log(classePiuFam);
-	
-	const cardIcon = document.createElement ("div");
-	cardIcon.classList.add ( "card-icona" );
-
-	let iconaStamp = document.createElement ("i");
-	let iconaNome = document.createElement ("h4");
-	iconaNome.append (myicone.name);
-	
-	iconaStamp.classList.add ( classePiuFam );
-	iconaStamp.classList.add ( classePiuicons );
-	container.append(cardIcon);
-	cardIcon.append(iconaStamp);
-	cardIcon.append(iconaNome);
-	
-	
-	// aggiungere il colore alle icone 
-	if (myicone.color === `blue`){
-		 iconaStamp.classList.add ("blu");
-		return true;
-	} 
-		if (myicone.color === `orange`){
-			 iconaStamp.classList.add ( "arancio" );
-			return true;
-		} 
-	if (myicone.color === `green`){
-				 iconaStamp.classList.add ( "verde" );
-				return true;
-			} 
 
 
-
-		
+selezione.addEventListener ("change", selectArray);
+function selectArray ( ) {
 	
-});
-console.log(icons);
-
-
-
-// selezione.addEventListener ("change",
-// function( ) {
-// 	container.innerHTML = " ";
-// 	const sceltaCat = selezione.value;
-// 	console.log(sceltaCat);
+	let sceltaCat = parseInt (selezione.value);
+	console.log(sceltaCat);
+	sceltaCat = 0;
 	
-// 	switch (sceltaCat) {
-// 		case 0:
-// 			default:
+	switch (sceltaCat) {
+		case 0:
+			default:
+				stampaElementiArr(icons);
 			
-// 	break;
+	break;
 	
-// 	case 1 :
-//
-
-// 
-	
-// });	
-// 	}
-
-// }
-// );
-
-// filtrare per colore
-
-// const coloreblu = icons.filter((mycolori) => {
-	
-	
-// });
-// 	console.log("colore blu", coloreblu);
-	
-		
-// 	const colorearancio = icons.filter((mycolori) => {
-	
-		
-// 	});
-// 		console.log("colore arancio", colorearancio);
-		
-// 		const coloreverde = icons.filter((mycolori) => {
-	
-			
-// 		});
-		
-// 		console.log("colore verde", coloreverde);
- 
-	 	// filtrare per categoria	
-const animali = icons.filter((myanimal) => {
+	case 1 :
+		const animali = icons.filter((myanimal) => {
 			if (myanimal.type === 'animal'){
-				
+				stampaElementiArr(animali);
 			   return true;
 		   };
 		});
 		console.log(animali);
+		break;
 
-const vegetali = icons.filter((myveg) =>{
-	if (myveg.type == 'vegetable' ){
-		return true;
-	}
-});
-console.log(vegetali);
+		case 2 :
+			const vegetali = icons.filter((myveg) =>{
+				if (myveg.type == 'vegetable' ){
+					stampaElementiArr(vegetali);
+					return true;
+				}
+			});
+			console.log(vegetali);
+			break;
 
-const user = icons.filter((myuser) =>{
-	if (myuser.type == 'user' ){
-		return true;
-	}
-});
-console.log(vegetali);
+			case 3 :
+				const user = icons.filter((myuser) =>{
+					if (myuser.type == 'user' ){
+						stampaElementiArr(user);
+						return true;
+						
+					}
+				
+				
+			});
+			console.log(`veg`, vegetali);
+			break;
+
+			
+
+
+	}};
 	
+
+
+
+ 
+	 	// filtrare per categoria	
+
+
+
+
+
+	
+
+// creo un ciclo per stampare le icone
+function stampaElementiArr(icons) {
+	container.innerHTML = " ";
+	icons.forEach((myicone)=> {
+	
+		let classePiuicons =  myicone.prefix + myicone.name ;
+		let classePiuFam =  myicone.family ;
+		
+		console.log(classePiuicons);
+		console.log(classePiuFam);
+		
+		const cardIcon = document.createElement ("div");
+		cardIcon.classList.add ( "card-icona" );
+	
+		let iconaStamp = document.createElement ("i");
+		let iconaNome = document.createElement ("h4");
+		iconaNome.append (myicone.name);
+		
+		iconaStamp.classList.add ( classePiuFam );
+		iconaStamp.classList.add ( classePiuicons );
+		container.append(cardIcon);
+		cardIcon.append(iconaStamp);
+		cardIcon.append(iconaNome);
+		
+		
+		// aggiungere il colore alle icone 
+		if (myicone.color === `blue`){
+			 iconaStamp.classList.add ("blu");
+			return true;
+		} 
+			if (myicone.color === `orange`){
+				 iconaStamp.classList.add ( "arancio" );
+				return true;
+			} 
+		if (myicone.color === `green`){
+					 iconaStamp.classList.add ( "verde" );
+					return true;
+				} 
+	
+	
+	
+			
+		
+	});
+	console.log(icons);
+	
+}
+
+
+
+
 
 
 
